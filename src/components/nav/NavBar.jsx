@@ -1,7 +1,7 @@
 import "./NavBar.css";
 import "./NavBar_Cart_Button.css";
 
-function NavBar() {
+function NavBar({addedValue}) {
   return (
     <>
       <nav>
@@ -11,7 +11,7 @@ function NavBar() {
             <img src="/assets/cart-icon.svg" />
           </span>
           Your Cart
-          <span className="badge">2</span>
+          <span className="badge">{addedValue}</span>
         </button>
       </nav>
       <div className="main-image">
@@ -21,9 +21,4 @@ function NavBar() {
   );
 }
 
-/**
- * 
-          <p>#</p>
-        </button>
- */
 export default NavBar;

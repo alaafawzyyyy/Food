@@ -1,70 +1,178 @@
-# GitHub Codespaces ♥️ React
+# React Vite App – Codebase Overview
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+This project is a React application bootstrapped with [Vite](https://vitejs.dev/). Below is an explanation of the codebase structure, with details on the purpose of each main directory and file, based on a scan of the repository.
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+## Project Structure
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+```
+codespaces-react/
+│
+├── index.html                # Main HTML file loaded by Vite, entry point for the app
+├── jsconfig.json             # JS tooling configuration for module resolution
+├── LICENSE                   # Project license (MIT)
+├── package.json              # Project dependencies, scripts, and metadata
+├── package-lock.json         # Exact dependency versions for reproducible installs
+├── README.md                 # Project documentation (this file)
+├── vite.config.js            # Vite build and test configuration
+│
+├── public/                   # Static assets served as-is
+│   ├── favicon.ico           # Favicon for the app
+│   ├── logo192.png           # App icon (192x192)
+│   ├── logo512.png           # App icon (512x512)
+│   ├── manifest.json         # PWA manifest
+│   ├── Octocat.png           # Example image asset
+│   ├── robots.txt            # Crawler rules
+│   └── assets/               # Additional images/icons
+│       ├── cart-icon.svg     # SVG icon for cart
+│       └── meals.jpg         # Food image for UI
+│
+├── src/                      # Source code for the React app
+│   ├── App.jsx               # Main app component, renders layout and routes
+│   ├── App.css               # App-level styles
+│   ├── App.test.jsx          # Tests for the main app component (Vitest)
+│   ├── index.jsx             # Entry point for React, renders <App />
+│   ├── index.css             # Global styles
+│   ├── logo.svg              # React logo asset
+│   ├── reportWebVitals.js    # Web vitals reporting utility
+│   ├── setupTests.js         # Test setup for jest-dom matchers
+│   └── components/           # Reusable UI components, organized by feature
+│       ├── food/             # Food-related components
+│       │   ├── food.js           # Food data array
+│       │   ├── FoodItem.jsx      # Renders a single food item
+│       │   ├── FoodItem.css      # Styles for food item
+│       │   ├── FoodList.jsx      # Renders the list of food items
+│       │   └── FoodList.css      # Styles for food list
+│       ├── info/             # Info section components
+│       │   ├── Info.jsx          # Info/about section
+│       │   └── Info.css          # Styles for info section
+│       └── nav/              # Navigation bar components
+│           ├── NavBar.jsx        # Main navigation bar
+│           ├── NavBar.css        # Styles for nav bar
+│           └── NavBar_Cart_Button.css # Styles for cart button
+│
+├── .devcontainer/            # Dev container configuration for Codespaces
+│   ├── devcontainer.json     # Container setup and port forwarding
+│   └── icon.svg              # Devcontainer icon (React logo)
+│
+├── .vscode/                  # VS Code workspace settings
+│   └── launch.json           # Debug configuration for running the app
+│
+├── .gitignore                # Files and folders to ignore in git
+```
 
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
+## Key Concepts
 
-## Available Scripts
+- **public/**: Static files and images available at the root URL. Not processed by Vite, but copied as-is to the build output.
+- **src/**: All React source code. Contains the main app, entry point, and modular components grouped by feature (food, info, nav).
+- **components/**: Feature-based folders for UI components, each with their own styles and logic.
+- **App.jsx**: Main application component, renders the navigation, info, and food list sections.
+- **App.test.jsx**: Contains tests for the main app component using Vitest and React Testing Library.
+- **vite.config.js**: Configuration for Vite's build, dev server, and test runner.
+- **package.json**: Lists dependencies, scripts (`start`, `build`, `test`), and project metadata.
+- **.devcontainer/**: Configuration for running the project in GitHub Codespaces or VS Code Dev Containers.
+- **.vscode/**: Editor-specific settings and debug configuration.
 
-In the project directory, you can run:
+## Scripts
 
-### `npm start`
+- `npm start` – Start the development server at [http://localhost:3000/](http://localhost:3000/)
+- `npm run build` – Build the app for production
+- `npm test` – Run tests in watch mode (Vitest)
 
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000/](http://localhost:3000/) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm start
+   ```
+3. Open [http://localhost:3000/](http://localhost:3000/) to view the app.
 
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+For more information, see the [Vite documentation](https://vitejs.dev/guide/) and [React documentation](https://reactjs.org/).
+# React Vite Project – Codebase Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is a React application bootstrapped with [Vite](https://vitejs.dev/). Below is an overview of the codebase structure and the purpose of each main directory and file.
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+codespaces-react/
+│
+├── index.html                # Main HTML file loaded by Vite
+├── jsconfig.json             # JS tooling configuration
+├── LICENSE                   # Project license
+├── package.json              # Project dependencies and scripts
+├── README.md                 # Project documentation (this file)
+├── vite.config.js            # Vite configuration
+│
+├── public/                   # Static assets served as-is
+│   ├── favicon.ico
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   ├── Octocat.png
+│   ├── robots.txt
+│   └── assets/               # Additional images/icons
+│       ├── cart-icon.svg
+│       └── meals.jpg
+│
+├── src/                      # Source code for the React app
+│   ├── App.jsx               # Main app component
+│   ├── App.css               # App-level styles
+│   ├── App.test.jsx          # App component tests
+│   ├── index.jsx             # Entry point for React
+│   ├── index.css             # Global styles
+│   ├── logo.svg              # Logo asset
+│   ├── reportWebVitals.js    # Web vitals reporting
+│   ├── setupTests.js         # Test setup
+│   └── components/           # Reusable UI components
+│       ├── food/             # Food-related components
+│       │   ├── food.js
+│       │   ├── FoodItem.jsx
+│       │   ├── FoodItem.css
+│       │   ├── FoodList.jsx
+│       │   └── FoodList.css
+│       ├── info/             # Info section components
+│       │   ├── Info.jsx
+│       │   └── Info.css
+│       └── nav/              # Navigation bar components
+│           ├── NavBar.jsx
+│           ├── NavBar.css
+│           └── NavBar_Cart_Button.css
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Key Concepts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **public/**: Static files and images available at the root URL. Not processed by Vite.
+- **src/**: All React source code. Contains the main app, entry point, and components.
+- **components/**: Organized by feature (food, info, nav) for modularity and clarity.
+- **App.jsx**: Main application component, typically renders the layout and routes.
+- **App.test.jsx**: Contains tests for the main app component.
+- **vite.config.js**: Configuration for Vite's build and dev server.
+- **package.json**: Lists dependencies and npm scripts (start, build, test, etc).
 
-## Learn More
+## Scripts
 
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
+- `npm start` – Start the development server.
+- `npm run build` – Build the app for production.
+- `npm test` – Run tests in watch mode.
 
-To learn Vitest, a Vite-native testing framework, go to [Vitest documentation](https://vitest.dev/guide/)
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm start
+   ```
+3. Open [http://localhost:3000/](http://localhost:3000/) to view the app.
 
-### Code Splitting
+---
 
-This section has moved here: [https://sambitsahoo.com/blog/vite-code-splitting-that-works.html](https://sambitsahoo.com/blog/vite-code-splitting-that-works.html)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf](https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf)
-
-### Advanced Configuration
-
-This section has moved here: [https://vitejs.dev/guide/build.html#advanced-base-options](https://vitejs.dev/guide/build.html#advanced-base-options)
-
-### Deployment
-
-This section has moved here: [https://vitejs.dev/guide/build.html](https://vitejs.dev/guide/build.html)
-
-### Troubleshooting
-
-This section has moved here: [https://vitejs.dev/guide/troubleshooting.html](https://vitejs.dev/guide/troubleshooting.html)
+For more information, see the [Vite documentation](https://vitejs.dev/guide/) and [React documentation](https://reactjs.org/).

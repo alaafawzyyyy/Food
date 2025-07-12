@@ -1,4 +1,6 @@
-function FoodItem({ item }) {
+import "./FoodItem.css";
+function FoodItem({item, handleAddToCart, handleAmount}) {
+
   return (
     <li className="food">
       <div>
@@ -10,10 +12,13 @@ function FoodItem({ item }) {
       <div className="form">
         <div className="input">
           <label htmlFor={`ammount_${item.id}`}>Amount</label>
-          <input id={`ammount_${item.id}`} type="text" />   
+          <input
+          id={`ammount_${item.id}`}
+          type="text"
+          onChange={handleAmount} />   
         </div>
 
-        <button>+Add</button>
+        <button onClick={handleAddToCart}>+Add</button>
       </div>
     </li>
   );
