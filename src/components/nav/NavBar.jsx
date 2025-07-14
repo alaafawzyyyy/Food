@@ -1,12 +1,12 @@
 import "./NavBar.css";
 import "./NavBar_Cart_Button.css";
 
-function NavBar({addedValue}) {
+function NavBar({addedValue,ShowCart}) {
   return (
     <>
       <nav>
         <h1>ReactMeals</h1>
-        <button className="button">
+        <button className="button" onClick={ShowCart}>
           <span className="icon">
             <img src="/assets/cart-icon.svg" />
           </span>
